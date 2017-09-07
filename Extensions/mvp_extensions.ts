@@ -23,11 +23,6 @@ namespace dcore.plugins.mvp_view_extension {
             }
             root.classList.remove("invalid"); //We want to remove invalid border if we re-render the view.
 
-            let elements: NodeListOf<Element> = this.root.querySelectorAll("input[type=checkbox].onoffswitch-checkbox");
-            for (var i = 0; i < elements.length; i++) {
-                this.transformCheckboxToSwitch(<HTMLInputElement>elements[i]);
-            }
-
             return root;
         }
 
