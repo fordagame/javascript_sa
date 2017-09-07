@@ -4,7 +4,7 @@
     destroy(): void;
 }
 
-namespace ERP.plugins.templates {
+namespace dcore.plugins.templates {
     export class TemplateResolver implements ITemplateResolver {
         templates: any[];
         templateDictionary: Array<(model: any) => string>;
