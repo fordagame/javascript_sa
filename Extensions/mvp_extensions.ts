@@ -2,9 +2,9 @@
     render(model: any): HTMLElement;
 }
 
-namespace dcore.plugins.mvp_view_extension {
+namespace dcore.plugins.mvp_extension {
     export class BaseView extends dcore.plugins.mvp.View implements IBaseView {
-        private template: (model: any) => string;
+        protected template: (model: any) => string;
 
         constructor(root: HTMLElement, template?: (model: any) => string) {
             super(root)
@@ -436,7 +436,7 @@ namespace dcore.plugins.mvp_view_extension {
 interface IBaseModel {
 }
 
-namespace dcore.plugins.mvp_model_extension {
+namespace dcore.plugins.mvp_extension {
     export class BaseModel extends dcore.plugins.mvp.Model implements IBaseModel {
         constructor() {
             super();
@@ -450,15 +450,15 @@ interface DCore {
 }
 
 interface MVPPluginExtension {
-    baseView: typeof dcore.plugins.mvp_view_extension.BaseView
-    baseModel: typeof dcore.plugins.mvp_model_extension.BaseModel
+    baseView: typeof dcore.plugins.mvp_extension.BaseView
+    baseModel: typeof dcore.plugins.mvp_extension.BaseModel
 }
 
 namespace dcore {
     "use strict";
 
-    import mvpExtView = plugins.mvp_view_extension;
-    import mvpExtModel = plugins.mvp_model_extension;
+    import mvpExtView = plugins.mvp_extension;
+    import mvpExtModel = plugins.mvp_extension;
 
     export interface Instance {
         useMVPExtended(): void;
