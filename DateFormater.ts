@@ -1,5 +1,4 @@
-﻿//Test comment
-class DateFormat {
+﻿class DateFormat {
     addZero(value) {
         return value < 10 ? '0' + value : value.toString();
     }
